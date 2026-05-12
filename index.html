@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TENKAI TENSHI</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#050816;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      position:fixed;
+      top:0;
+      width:100%;
+      backdrop-filter:blur(12px);
+      background:rgba(0,0,0,.35);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      z-index:999;
+    }
+
+    nav{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px;
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:bold;
+      color:#00e5ff;
+      letter-spacing:2px;
+    }
+
+    nav ul{
+      display:flex;
+      gap:20px;
+      list-style:none;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:white;
+      transition:.3s;
+    }
+
+    nav a:hover{
+      color:#00e5ff;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:100px 20px;
+      background:
+      radial-gradient(circle at top,#0d1e3d 0%,transparent 40%),
+      radial-gradient(circle at bottom right,#142b5f 0%,transparent 40%);
+    }
+
+    .hero-content{
+      max-width:900px;
+    }
+
+    .hero h1{
+      font-size:5rem;
+      margin-bottom:20px;
+      background:linear-gradient(90deg,#00e5ff,#35ffb2);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero p{
+      color:#c4d0e3;
+      font-size:1.2rem;
+      line-height:1.7;
+      margin-bottom:40px;
+    }
+
+    .buttons{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:15px;
+    }
+
+    .btn{
+      padding:14px 26px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:.3s;
+    }
+
+    .primary{
+      background:#00e5ff;
+      color:#001018;
+    }
+
+    .primary:hover{
+      transform:translateY(-3px);
+      box-shadow:0 0 25px rgba(0,229,255,.5);
+    }
+
+    .secondary{
+      border:1px solid #00e5ff;
+      color:white;
+    }
+
+    .secondary:hover{
+      background:#00e5ff;
+      color:#001018;
+    }
+
+    section{
+      padding:100px 20px;
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:3rem;
+      margin-bottom:20px;
+      color:#00e5ff;
+    }
+
+    .section-sub{
+      text-align:center;
+      color:#c4d0e3;
+      max-width:800px;
+      margin:auto;
+      margin-bottom:60px;
+      line-height:1.7;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#0c1428;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;
+      padding:30px;
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:#00e5ff;
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#35ffb2;
+      font-size:1.5rem;
+    }
+
+    .card p{
+      color:#c4d0e3;
+      line-height:1.7;
+      margin-bottom:25px;
+    }
+
+    footer{
+      padding:40px 20px;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:#9eb1cf;
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:3rem;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">TENKAI TENSHI</div>
+
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#apps">Apps</a></li>
+      <li><a href="#privacidad">Privacidad</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-content">
+
+    <h1>TENKAI TENSHI</h1>
+
+    <p>
+      Apps para makers, impresión 3D, cálculo de costos,
+      cotizaciones y herramientas digitales para pequeños negocios.
+    </p>
+
+    <div class="buttons">
+
+      <a class="btn primary" href="#apps">
+        Ver aplicaciones
+      </a>
+
+      <a class="btn secondary" href="#privacidad">
+        Política de privacidad
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="apps">
+  <div class="container">
+
+    <h2 class="section-title">
+      Aplicaciones
+    </h2>
+
+    <p class="section-sub">
+      Herramientas desarrolladas para makers,
+      granjas de impresión 3D y negocios que necesitan
+      calcular costos y organizar mejor sus proyectos.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <h3>TENKAI FORGE SUITE</h3>
+
+        <p>
+          Suite completa para cálculo de costos,
+          clientes, cotizaciones, materiales,
+          impresoras, PDFs y administración de proyectos.
+        </p>
+
+        <a class="btn primary"
+        href="#">
+          Próximamente
+        </a>
+
+      </div>
+
+      <div class="card">
+
+        <h3>TENKAI CALCULATOR 3D</h3>
+
+        <p>
+          Calculadora rápida para impresión 3D
+          con materiales, energía, impuestos,
+          márgenes y cotizaciones rápidas.
+        </p>
+
+        <a class="btn primary"
+        href="#">
+          Próximamente
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="privacidad">
+  <div class="container">
+
+    <h2 class="section-title">
+      Política de Privacidad
+    </h2>
+
+    <p class="section-sub">
+
+      Las aplicaciones actuales de TENKAI TENSHI
+      almacenan la información localmente en el dispositivo
+      del usuario y no utilizan servidores propios
+      para recopilar datos personales.
+
+      Algunas apps pueden incluir enlaces externos
+      o enlaces de afiliado en la sección
+      “Apoya al creador”.
+
+    </p>
+
+    <div class="buttons">
+
+      <a class="btn primary"
+      href="#">
+        Leer política completa
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="container">
+
+    <h2 class="section-title">
+      Contacto
+    </h2>
+
+    <p class="section-sub">
+
+      Para soporte, dudas o preguntas relacionadas
+      con aplicaciones y privacidad:
+
+      <br><br>
+
+      fer354elking@gmail.com
+
+    </p>
+
+    <div class="buttons">
+
+      <a class="btn primary"
+      href="mailto:fer354elking@gmail.com">
+        Enviar correo
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<footer>
+
+  © 2026 TENKAI TENSHI.
+  Todos los derechos reservados.
+
+</footer>
+
+</body>
+</html>
