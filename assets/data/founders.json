@@ -1,0 +1,46 @@
+{
+  "programName": "Tenkai Founders",
+  "active": true,
+  "stage": 1,
+  "totalSlots": 25,
+  "usedSlots": 7,
+  "showExactSlots": true,
+  "products": {
+    "starter": {
+      "founderPrice": 499,
+      "regularPrice": 899,
+      "currency": "MXN",
+      "available": true
+    },
+    "professional": {
+      "founderPrice": 899,
+      "regularPrice": 1299,
+      "currency": "MXN",
+      "available": true
+    },
+    "multipos": {
+      "founderPrice": 499,
+      "regularPrice": 799,
+      "currency": "MXN",
+      "available": true
+    },
+    "multiposBox": {
+      "founderPrice": 199,
+      "regularPrice": 299,
+      "currency": "MXN",
+      "available": true
+    },
+    "resguard": {
+      "founderPrice": 499,
+      "regularPrice": 799,
+      "currency": "MXN",
+      "available": true
+    },
+    "care": {
+      "founderPrice": 299,
+      "regularPrice": 299,
+      "currency": "MXN/año",
+      "available": true
+    }
+  }
+}
