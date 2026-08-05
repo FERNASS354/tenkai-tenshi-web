@@ -1,8 +1,8 @@
 {
     "id": "/tenkai-tenshi-web/apps/calculator3d-web/",
     "scope": "/tenkai-tenshi-web/apps/calculator3d-web/",
-    "name": "Tenkai Calculator 3D",
-    "short_name": "Tenkai Calc 3D",
+    "name": "Tenkai C3D",
+    "short_name": "Tenkai C3D",
     "start_url": "/tenkai-tenshi-web/apps/calculator3d-web/index.html",
     "display": "fullscreen",
     "display_override": [
