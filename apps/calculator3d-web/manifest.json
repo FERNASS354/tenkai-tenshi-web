@@ -3,7 +3,7 @@
     "short_name": "Tenkai C3D",
     "lang": "es-MX",
     "dir": "ltr",
-    "start_url": "index.html",
+    "start_url": "./",
     "scope": "./",
     "display": "standalone",
     "display_override": [
@@ -22,25 +22,25 @@
             "src": "icons/Icon-192.png",
             "sizes": "192x192",
             "type": "image/png",
-            "purpose": "any"
+            "purpose": "any maskable"
         },
         {
             "src": "icons/Icon-512.png",
             "sizes": "512x512",
             "type": "image/png",
-            "purpose": "any"
+            "purpose": "any maskable"
         },
         {
             "src": "icons/Icon-maskable-192.png",
             "sizes": "192x192",
             "type": "image/png",
-            "purpose": "maskable"
+            "purpose": "any maskable"
         },
         {
             "src": "icons/Icon-maskable-512.png",
             "sizes": "512x512",
             "type": "image/png",
-            "purpose": "maskable"
+            "purpose": "any maskable"
         }
     ]
 }
