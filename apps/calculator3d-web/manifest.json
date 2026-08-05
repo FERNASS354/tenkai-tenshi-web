@@ -1,7 +1,9 @@
 {
     "name": "Tenkai C3D",
     "short_name": "Tenkai C3D",
-    "start_url": "./",
+    "lang": "es-MX",
+    "dir": "ltr",
+    "start_url": "index.html",
     "scope": "./",
     "display": "standalone",
     "display_override": [
