@@ -3,6 +3,11 @@
     "short_name": "Tenkai Calc 3D",
     "start_url": ".",
     "display": "standalone",
+    "display_override": [
+        "standalone",
+        "fullscreen",
+        "minimal-ui"
+    ],
     "background_color": "#0d0e15",
     "theme_color": "#0d0e15",
     "description": "Calculadora y cotizador rápido de impresión 3D para makers, laboratorios y talleres.",
