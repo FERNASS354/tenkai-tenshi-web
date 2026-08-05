@@ -54,6 +54,18 @@
         }
       });
     }
+    function triggerFullscreen() {
+      const el = document.documentElement;
+      if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (el.requestFullscreen) {
+          el.requestFullscreen().catch(() => {});
+        } else if (el.webkitRequestFullscreen) {
+          el.webkitRequestFullscreen().catch(() => {});
+        }
+      }
+    }
+    window.addEventListener('click', triggerFullscreen);
+    window.addEventListener('touchstart', triggerFullscreen);
   </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
