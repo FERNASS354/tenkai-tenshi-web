@@ -13,8 +13,20 @@
       "available": true
     },
     "professional": {
-      "founderPrice": 899,
-      "regularPrice": 1299,
+      "founderPrice": 999,
+      "regularPrice": 1499,
+      "currency": "MXN",
+      "available": true
+    },
+    "distribution": {
+      "founderPrice": 1499,
+      "regularPrice": 1899,
+      "currency": "MXN",
+      "available": true
+    },
+    "business": {
+      "founderPrice": 3999,
+      "regularPrice": 3999,
       "currency": "MXN",
       "available": true
     },
