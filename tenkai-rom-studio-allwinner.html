@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tenkai ROM Studio Universal Allwinner · Developer Tools · Tenkai Tenshi</title>
+  <meta name="description" content="Universal ROM unpacking, repackaging, dynamic partition builder & firmware flashing utility for Allwinner SoC platforms.">
+  <meta name="theme-color" content="#080a12">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tenkai ROM Studio Universal Allwinner · Developer Tools">
+  <meta property="og:description" content="Universal ROM unpacking, repackaging, dynamic partition builder & firmware flashing utility for Allwinner SoC platforms.">
+  <meta property="og:image" content="assets/og-tenkai-tenshi.png">
+  <link rel="icon" href="assets/tenkai-eye-mark.png">
+  <link rel="apple-touch-icon" href="assets/tenkai-eye-mark.png">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="dev-tool">
+  <a class="skip-link" href="#contenido">Skip to content / Saltar al contenido</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="assets/tenkai-eye-mark.png" width="34" height="34" alt="">
+      <span>TENKAI <b>TENSHI</b></span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">Toggle menu</span>
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="ecosistemas.html">Ecosistemas</a>
+      <a href="aplicaciones.html">Aplicaciones</a>
+      <a class="active" href="proyectos-dev.html">Proyectos Dev</a>
+      <a href="tenkai-pos-landing.html">Tenkai POS</a>
+      <a href="tenkai-founders.html">Tenkai Founders</a>
+      <a href="comunidad-beta.html">Comunidad Beta</a>
+      <a href="politica-privacidad.html">Privacidad</a>
+      <a class="nav-cta" href="soporte-contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <!-- Page Hero with Language Switcher -->
+    <section class="page-hero section-shell">
+      <div class="page-hero-copy">
+        <!-- Interactive Language Switcher -->
+        <div class="lang-switcher" aria-label="Language selection / Selección de idioma">
+          <span class="lang-label">Language:</span>
+          <button type="button" class="lang-btn active" data-lang-target="en">English (EN)</button>
+          <button type="button" class="lang-btn" data-lang-target="es">Español (ES)</button>
+        </div>
+
+        <!-- English Header -->
+        <div data-lang="en">
+          <p class="eyebrow"><span></span>Firmware Engineering & SoC Tool</p>
+          <h1>Tenkai ROM Studio <em>Universal Allwinner</em></h1>
+          <p class="lede">
+            A comprehensive, universal firmware extraction, dynamic super partition builder, boot-resource editor, and USB FEL recovery suite specifically engineered for Allwinner SoC chipsets.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#downloads">Download Tool</a>
+            <a class="button secondary" href="#workflow">View Architecture & Guides</a>
+          </div>
+        </div>
+
+        <!-- Spanish Header -->
+        <div data-lang="es">
+          <p class="eyebrow"><span></span>Ingeniería de Firmware y Utilidad SoC</p>
+          <h1>Tenkai ROM Studio <em>Universal Allwinner</em></h1>
+          <p class="lede">
+            Suite universal de desempaquetado de firmware, constructor de particiones dinámicas super, editor de boot-resource y flasheo de rescate por USB FEL diseñada específicamente para procesadores Allwinner.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#downloads">Descargar Herramienta</a>
+            <a class="button secondary" href="#workflow">Ver Arquitectura y Guías</a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="page-hero-visual">
+        <div style="text-align: center; padding: 2rem;">
+          <div style="width: 110px; height: 110px; margin: 0 auto 1.5rem; border-radius: 28px; background: radial-gradient(circle, rgba(78, 216, 246, 0.25), rgba(155, 124, 255, 0.1)); border: 1px solid rgba(78, 216, 246, 0.4); display: grid; place-items: center; box-shadow: 0 0 35px rgba(78, 216, 246, 0.2);">
+            <span style="font-size: 3.2rem;">⚡</span>
+          </div>
+          <span class="status live" style="position: static; display: inline-block;">Allwinner Universal Engine</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Meta Strip -->
+    <div class="meta-strip">
+      <div>
+        <span data-lang="en">Version</span>
+        <span data-lang="es">Versión</span>
+        <strong>v1.0.0 (Preview / Staging)</strong>
+      </div>
+      <div>
+        <span data-lang="en">Platform & Architecture</span>
+        <span data-lang="es">Plataforma y Arquitectura</span>
+        <strong>Windows x64 / Linux CLI</strong>
+      </div>
+      <div>
+        <span data-lang="en">Target SoCs</span>
+        <span data-lang="es">Procesadores Soportados</span>
+        <strong>H713 · H616 · H618 · H313 · A523</strong>
+      </div>
+    </div>
+
+    <!-- Section 1: Overview & Why it Exists -->
+    <section class="section">
+      <div class="section-shell">
+        <div class="section-heading">
+          <!-- English -->
+          <div data-lang="en">
+            <p class="eyebrow"><span></span>The Problem & Solution</p>
+            <h2>Built to replace broken legacy tools</h2>
+            <p>
+              Modifying modern Android firmware on Allwinner chipsets has historically been painful. Official tools like PhoenixCard and outdated LiveSuit versions fail on modern 64-bit systems, corrupt IMAGEWTY partition tables, and cannot parse dynamic <code>super.img</code> sparse partitions found in Android 10, 11, and 12+.
+            </p>
+          </div>
+          <!-- Spanish -->
+          <div data-lang="es">
+            <p class="eyebrow"><span></span>El Problema y la Solución</p>
+            <h2>Creado para sustituir herramientas obsoletas</h2>
+            <p>
+              Modificar firmware moderno de Android en procesadores Allwinner ha sido tradicionalmente complejo. Herramientas antiguas como PhoenixCard y versiones obsoletas de LiveSuit fallan en sistemas modernos de 64 bits, corrompen las tablas de partición IMAGEWTY y no pueden procesar particiones dinámicas <code>super.img</code> presentes en Android 10, 11 y 12+.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <article class="info-card">
+            <h3 data-lang="en">IMAGEWTY Extraction</h3>
+            <h3 data-lang="es">Extracción IMAGEWTY</h3>
+            <p data-lang="en">Full inspection and bit-exact extraction of Allwinner firmware container format, item tables, sys_config.fex, and U-Boot binaries without checksum damage.</p>
+            <p data-lang="es">Inspección completa y extracción exacta de contenedores de firmware Allwinner, tablas de elementos, sys_config.fex y binarios de U-Boot sin dañar checksums.</p>
+          </article>
+
+          <article class="info-card">
+            <h3 data-lang="en">Dynamic Super (LP) Engine</h3>
+            <h3 data-lang="es">Motor Dynamic Super (LP)</h3>
+            <p data-lang="en">Unpack, rebuild, resize, and sparse-align Android dynamic partitions (<code>system</code>, <code>vendor</code>, <code>product</code>, <code>system_ext</code>, <code>odm</code>) with exact block geometry.</p>
+            <p data-lang="es">Desempaqueta, reconstruye, redimensiona y alinea particiones dinámicas de Android (<code>system</code>, <code>vendor</code>, <code>product</code>, <code>system_ext</code>, <code>odm</code>) con geometría exacta.</p>
+          </article>
+
+          <article class="info-card">
+            <h3 data-lang="en">Boot-Resource Editor</h3>
+            <h3 data-lang="es">Editor de Boot-Resource</h3>
+            <p data-lang="en">Safely unpack and replace boot logos, fastboot graphics, and battery charging animations while preserving header structure and CRC integrity.</p>
+            <p data-lang="es">Desempaqueta y reemplaza logos de inicio, pantallas de fastboot y animaciones de carga preservando la cabecera y la integridad de CRC.</p>
+          </article>
+
+          <article class="info-card">
+            <h3 data-lang="en">USB FEL Flasher & Recovery</h3>
+            <h3 data-lang="es">Flasheador USB FEL y Rescate</h3>
+            <p data-lang="en">Direct low-level communication with the Allwinner BootROM over USB for unbricking, partition flashing, DRAM calibration, and EDL-level recovery.</p>
+            <p data-lang="es">Comunicación directa de bajo nivel con el BootROM de Allwinner por USB para desbrickear, flashear particiones, calibrar DRAM y rescate de hardware.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Supported SoCs & Hardware Targets -->
+    <section class="section surface-section">
+      <div class="section-shell">
+        <div class="section-heading">
+          <div data-lang="en">
+            <p class="eyebrow"><span></span>Hardware Compatibility</p>
+            <h2>Supported Allwinner SoCs & Platforms</h2>
+            <p>
+              Engineered to support a broad range of Allwinner Cortex-A53 and Cortex-A55 multi-core processors used in smart projectors, TV boxes, Single Board Computers (SBCs), and embedded devices.
+            </p>
+          </div>
+          <div data-lang="es">
+            <p class="eyebrow"><span></span>Compatibilidad de Hardware</p>
+            <h2>Procesadores Allwinner y Plataformas Soportadas</h2>
+            <p>
+              Diseñado para soportar procesadores Allwinner Cortex-A53 y Cortex-A55 multicore utilizados en proyectores inteligentes, TV boxes, SBCs y dispositivos embebidos.
+            </p>
+          </div>
+        </div>
+
+        <div class="chip-grid">
+          <!-- Allwinner H713 -->
+          <article class="chip-card">
+            <div class="chip-header">
+              <strong>Allwinner H713</strong>
+              <span class="chip-target">Smart Projectors</span>
+            </div>
+            <p data-lang="en">Quad-Core ARM Cortex-A53 with Mali-G31 GPU. Primary target for Magcubic L018, HY300, HY320 smart projection devices running Android 11.</p>
+            <p data-lang="es">Quad-Core ARM Cortex-A53 con GPU Mali-G31. Objetivo principal para proyectores inteligentes Magcubic L018, HY300, HY320 con Android 11.</p>
+          </article>
+
+          <!-- Allwinner H616 / H618 -->
+          <article class="chip-card">
+            <div class="chip-header">
+              <strong>Allwinner H616 / H618</strong>
+              <span class="chip-target">TV Boxes & SBCs</span>
+            </div>
+            <p data-lang="en">High-performance OTT streaming chipset powering popular TV boxes (T95, Tanix TX6s, X96) and maker boards like Orange Pi Zero 2 and Orange Pi Zero 3.</p>
+            <p data-lang="es">Chipset OTT de alto rendimiento presente en TV boxes (T95, Tanix TX6s, X96) y placas maker como Orange Pi Zero 2 y Orange Pi Zero 3.</p>
+          </article>
+
+          <!-- Allwinner H313 -->
+          <article class="chip-card">
+            <div class="chip-header">
+              <strong>Allwinner H313</strong>
+              <span class="chip-target">Budget OTT Media</span>
+            </div>
+            <p data-lang="en">Cost-effective Quad-Core processor for entry-level TV sticks and media players running Android 10/11 Go and AOSP lightweight distributions.</p>
+            <p data-lang="es">Procesador Quad-Core optimizado para sticks de TV y reproductores multimedia económicos con Android 10/11 Go y distribuciones ligeras AOSP.</p>
+          </article>
+
+          <!-- Allwinner A523 / A133 -->
+          <article class="chip-card">
+            <div class="chip-header">
+              <strong>Allwinner A523 / A133</strong>
+              <span class="chip-target">Tablets & Panels</span>
+            </div>
+            <p data-lang="en">Octa-Core (A523) and Quad-Core (A133) architectures used in modern Android 12/13 commercial tablets, touch kiosks, and smart displays.</p>
+            <p data-lang="es">Arquitecturas Octa-Core (A523) y Quad-Core (A133) utilizadas en tablets comerciales con Android 12/13, kioscos táctiles y pantallas inteligentes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Step-by-Step Developer Workflow -->
+    <section class="section" id="workflow">
+      <div class="section-shell">
+        <div class="section-heading">
+          <div data-lang="en">
+            <p class="eyebrow"><span></span>End-to-End Workflow</p>
+            <h2>How the tool works step-by-step</h2>
+            <p>
+              From stock factory <code>.img</code> extraction to custom modifications and safe USB flashing, Tenkai ROM Studio manages the full firmware lifecycle.
+            </p>
+          </div>
+          <div data-lang="es">
+            <p class="eyebrow"><span></span>Flujo de Trabajo Paso a Paso</p>
+            <h2>Cómo funciona la herramienta</h2>
+            <p>
+              Desde la extracción de la imagen <code>.img</code> de fábrica hasta la personalización y el flasheo seguro por USB, Tenkai ROM Studio gestiona todo el ciclo de vida del firmware.
+            </p>
+          </div>
+        </div>
+
+        <div class="workflow-grid">
+          <article class="step-card">
+            <span class="step-number">01</span>
+            <h3 data-lang="en">Image Extraction</h3>
+            <h3 data-lang="es">Extracción de Imagen</h3>
+            <p data-lang="en">Decompiles the raw IMAGEWTY file into its individual components: U-Boot, sys_config, boot-resource, recovery, boot, vbmeta, and the raw super partition.</p>
+            <p data-lang="es">Descompila el archivo IMAGEWTY en sus componentes individuales: U-Boot, sys_config, boot-resource, recovery, boot, vbmeta y la partición raw super.</p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">02</span>
+            <h3 data-lang="en">Super LP Unpacking</h3>
+            <h3 data-lang="es">Desempaquetado Super LP</h3>
+            <p data-lang="en">Converts sparse Android super images into physical filesystem partitions (<code>system.img</code>, <code>vendor.img</code>, <code>product.img</code>) ready for mounting and editing.</p>
+            <p data-lang="es">Convierte imágenes sparse super de Android en particiones de sistema de archivos (<code>system.img</code>, <code>vendor.img</code>, <code>product.img</code>) listas para montar y editar.</p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">03</span>
+            <h3 data-lang="en">System Customization</h3>
+            <h3 data-lang="es">Personalización del Sistema</h3>
+            <p data-lang="en">Inject custom launchers (Tenkai Home), apply RRO TvSettings theme overlays, remove bloatware packages, customize boot logos, and integrate Magisk root.</p>
+            <p data-lang="es">Inyecta launchers personalizados (Tenkai Home), aplica capas RRO para TvSettings, elimina paquetes innecesarios, personaliza logos de inicio e integra Magisk root.</p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">04</span>
+            <h3 data-lang="en">Dynamic Repack & Checksum</h3>
+            <h3 data-lang="es">Reempaquetado y Checksums</h3>
+            <p data-lang="en">Calculates exact partition boundaries, builds dynamic metadata with <code>lpmake</code>, updates IMAGEWTY entry tables, and verifies static SHA-256 hashes.</p>
+            <p data-lang="es">Calcula límites de partición exactos, construye metadatos dinámicos con <code>lpmake</code>, actualiza tablas IMAGEWTY y verifica sumas SHA-256 estáticas.</p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">05</span>
+            <h3 data-lang="en">Safe USB Flashing</h3>
+            <h3 data-lang="es">Flasheo Seguro por USB</h3>
+            <p data-lang="en">Pushes the compiled image to the target device via low-level USB FEL mode or Fastboot with verified write verification and partition alignment.</p>
+            <p data-lang="es">Transfiere la imagen compilada al dispositivo objetivo mediante el modo de bajo nivel USB FEL o Fastboot con verificación de escritura y alineación de particiones.</p>
+          </article>
+        </div>
+
+        <!-- Terminal Demo Window -->
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="terminal-title">tenkai-rom-studio-cli · Allwinner H713 Build Environment</span>
+            <span></span>
+          </div>
+          <pre class="terminal-body"><code><span class="comment"># 1. Inspect stock firmware and extract IMAGEWTY structure</span>
+<span class="cmd">$ tenkai-rom-studio</span> unpack --image stock_magcubic_l018_h713.img --out ./workspace/
+<span class="output">[+] Validating IMAGEWTY header signature (magic: 0x494d4147)... OK
+[+] Found 50 item partition descriptors
+[+] Extracted boot-resource.fex (1,432,064 bytes)
+[+] Extracted sys_config.fex (128,416 bytes)
+[+] Extracted raw super.img (2,147,483,648 bytes) -> SHA256: F3B72C...</span>
+
+<span class="comment"># 2. Decompile dynamic super partition into system, vendor and product</span>
+<span class="cmd">$ tenkai-rom-studio</span> super unpack --input ./workspace/super.img --out ./workspace/partitions/
+<span class="output">[+] Dynamic LP partition metadata verified
+[+] Extracted: system (892 MB), vendor (341 MB), product (214 MB)</span>
+
+<span class="comment"># 3. Inject Tenkai Home, TvSettings RRO overlay and strip bloatware</span>
+<span class="cmd">$ tenkai-rom-studio</span> inject --target ./workspace/partitions/ --launcher TenkaiHome.apk --overlay TvSettings_Tenkai.apk --root magisk
+<span class="output">[+] Injected RRO idmap2 overlay: tenkai_tvsettings_overlay.apk -> /system/app/
+[+] Signed custom packages with platform testkey
+[+] Removed 14 telemetry & bloatware APK packages</span>
+
+<span class="comment"># 4. Rebuild dynamic super and compile flashable rescue image</span>
+<span class="cmd">$ tenkai-rom-studio</span> build --workspace ./workspace/ --out Tenkai-L018-OS-v1-candidate.img --verify
+<span class="success">[✔] Super partition compiled with exact sector alignment (1,862,983,440 bytes)
+[✔] Static IMAGEWTY validation passed! 50 entries verified.
+[✔] Final Image SHA-256: 3871EC5DA10F8F70221024AC8637F787949045A535539EF2AA4EA0C5C9A82653</span></code></pre>
+        </div>
+
+        <!-- Hardware Safety Notice -->
+        <div class="safety-box">
+          <div class="safety-icon">⚠️</div>
+          <div class="safety-content">
+            <h4 data-lang="en">Developer Hardware Flashing Advisory</h4>
+            <h4 data-lang="es">Aviso de Seguridad para Flasheo de Hardware</h4>
+            <p data-lang="en">
+              Flashing low-level firmware, modifying U-Boot, or altering partition layouts carries inherent risks of bricking embedded devices. Always verify your device power supply, use a verified USB-A to USB-A data cable, back up your original factory dump before flashing, and ensure you have physical access to the device's FEL recovery test points (pins).
+            </p>
+            <p data-lang="es">
+              Flashear firmware de bajo nivel, modificar U-Boot o alterar tablas de particiones conlleva riesgos inherentes de brickeo en dispositivos embebidos. Verifica siempre la fuente de alimentación, utiliza cables de datos USB-A a USB-A de calidad, respalda el volcado de fábrica original antes de flashear y asegúrate de tener acceso a los puntos de prueba (pines) de recuperación FEL del equipo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Technical Specifications & Partition Map -->
+    <section class="section surface-section">
+      <div class="section-shell">
+        <div class="section-heading">
+          <div data-lang="en">
+            <p class="eyebrow"><span></span>Technical Architecture</p>
+            <h2>Technical Specifications & Matrix</h2>
+            <p>Low-level structural support and capabilities provided by Tenkai ROM Studio.</p>
+          </div>
+          <div data-lang="es">
+            <p class="eyebrow"><span></span>Arquitectura Técnica</p>
+            <h2>Especificaciones Técnicas y Matriz</h2>
+            <p>Soporte estructural de bajo nivel y capacidades que integra Tenkai ROM Studio.</p>
+          </div>
+        </div>
+
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th data-lang="en">Component / Feature</th>
+              <th data-lang="es">Componente / Característica</th>
+              <th data-lang="en">Supported Formats / Protocols</th>
+              <th data-lang="es">Formatos / Protocolos Soportados</th>
+              <th data-lang="en">Tool Handling & Capabilities</th>
+              <th data-lang="es">Capacidades y Tratamiento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong data-lang="en">Firmware Container</strong><strong data-lang="es">Contenedor de Firmware</strong></td>
+              <td>Allwinner <code>IMAGEWTY</code> v1 / v2 (.img)</td>
+              <td data-lang="en">Full unpack, header checksum reconstruction, item alignment, sparse table generation</td>
+              <td data-lang="es">Desempaquetado completo, reconstrucción de checksums de cabecera, alineación de items y sparse tables</td>
+            </tr>
+            <tr>
+              <td><strong data-lang="en">Dynamic Partitions</strong><strong data-lang="es">Particiones Dinámicas</strong></td>
+              <td>Android 10/11/12+ <code>super.img</code> (LP Sparse)</td>
+              <td data-lang="en">Extract & repack <code>system</code>, <code>vendor</code>, <code>product</code>, <code>odm</code> with automatic sector math</td>
+              <td data-lang="es">Extracción y reempaque de <code>system</code>, <code>vendor</code>, <code>product</code>, <code>odm</code> con cálculo de sectores automático</td>
+            </tr>
+            <tr>
+              <td><strong data-lang="en">Boot Splash & Media</strong><strong data-lang="es">Pantallas de Arranque</strong></td>
+              <td><code>boot-resource.fex</code> / BMP / PNG</td>
+              <td data-lang="en">Replaces bootlogo, charging animations, fastboot frames without struct offset corruption</td>
+              <td data-lang="es">Reemplaza bootlogo, animaciones de carga y fastboot sin corromper offsets estructurales</td>
+            </tr>
+            <tr>
+              <td><strong data-lang="en">AOSP UI Customization</strong><strong data-lang="es">Personalización AOSP</strong></td>
+              <td>Runtime Resource Overlays (RRO / idmap2)</td>
+              <td data-lang="en">Custom theme injection for TvSettings, SystemUI, Bluetooth, Wi-Fi menus without framework rebuilds</td>
+              <td data-lang="es">Inyección de temas personalizados en TvSettings, SystemUI, Bluetooth y Wi-Fi sin recompilar el framework</td>
+            </tr>
+            <tr>
+              <td><strong data-lang="en">Device Communication</strong><strong data-lang="es">Comunicación con Dispositivo</strong></td>
+              <td>USB FEL Mode / LiveSuit Protocol / Fastboot</td>
+              <td data-lang="en">NAND/eMMC direct write, DRAM parameter initialization, BootROM handshaking and rescue flash</td>
+              <td data-lang="es">Escritura directa a NAND/eMMC, inicialización de DRAM, comunicación con BootROM y flasheo de rescate</td>
+            </tr>
+            <tr>
+              <td><strong data-lang="en">Host Requirements</strong><strong data-lang="es">Requisitos del Sistema</strong></td>
+              <td>Windows 10 / 11 (x64) & Linux (x86_64 / ARM64)</td>
+              <td data-lang="en">Standalone portable CLI & GUI suite. No archaic 32-bit drivers required</td>
+              <td data-lang="es">Suite ejecutable CLI y GUI portable. No requiere controladores obsoletos de 32 bits</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 5: Download & Releases Area -->
+    <section class="section" id="downloads">
+      <div class="section-shell">
+        <div class="section-heading">
+          <div data-lang="en">
+            <p class="eyebrow"><span></span>Releases & Distribution</p>
+            <h2>Get Tenkai ROM Studio</h2>
+            <p>
+              The tool is currently in active developer preview and hardware staging. Stay tuned for public build releases or request early developer access.
+            </p>
+          </div>
+          <div data-lang="es">
+            <p class="eyebrow"><span></span>Lanzamientos y Distribución</p>
+            <h2>Obtener Tenkai ROM Studio</h2>
+            <p>
+              La herramienta se encuentra actualmente en fase de pruebas activas con hardware. Pronto estará disponible la descarga pública de la primera versión estable.
+            </p>
+          </div>
+        </div>
+
+        <div class="app-card featured" style="background: linear-gradient(145deg, rgba(78, 216, 246, 0.08), rgba(155, 124, 255, 0.04));">
+          <div class="app-top">
+            <div>
+              <p class="app-kicker" data-lang="en">Current Release · Developer Preview</p>
+              <p class="app-kicker" data-lang="es">Versión Actual · Vista Previa para Desarrolladores</p>
+              <h3>Tenkai ROM Studio v1.0.0-Preview</h3>
+            </div>
+            <span class="status live">Staging Build</span>
+          </div>
+
+          <p data-lang="en">
+            Complete bundle featuring IMAGEWTY decompiler, Dynamic Super LP utilities, Boot-Resource modifier, RRO overlay tools, and USB FEL protocol flasher for Allwinner platforms.
+          </p>
+          <p data-lang="es">
+            Paquete completo con descompilador IMAGEWTY, utilidades para Dynamic Super LP, modificador de Boot-Resource, inyector RRO y flasheador por protocolo USB FEL para plataformas Allwinner.
+          </p>
+
+          <div class="meta-strip" style="width: 100%; margin: 1.5rem 0;">
+            <div>
+              <span data-lang="en">Build Target</span>
+              <span data-lang="es">Objetivo de Build</span>
+              <strong>Windows x64 / Linux</strong>
+            </div>
+            <div>
+              <span data-lang="en">License</span>
+              <span data-lang="es">Licencia</span>
+              <strong>Tenkai Developer License</strong>
+            </div>
+            <div>
+              <span data-lang="en">Status</span>
+              <span data-lang="es">Estado</span>
+              <strong>Preview Activa</strong>
+            </div>
+          </div>
+
+          <div class="card-actions" style="margin-top: 1rem;">
+            <a class="button primary" href="comunidad-beta.html" data-lang="en">Request Early Access & Beta</a>
+            <a class="button primary" href="comunidad-beta.html" data-lang="es">Solicitar Acceso Temprano / Beta</a>
+            <a class="button secondary" href="soporte-contacto.html" data-lang="en">Contact Developer</a>
+            <a class="button secondary" href="soporte-contacto.html" data-lang="es">Contactar al Creador</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="contact-section">
+      <div class="contact-inner section-shell">
+        <div data-lang="en">
+          <p class="eyebrow"><span></span>Join the Laboratory</p>
+          <h2>Have an Allwinner device or custom ROM project?</h2>
+          <p>
+            Join our beta community to test custom firmware builds, share device dumps, and shape the future of Allwinner firmware development.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="comunidad-beta.html">Join Beta Community</a>
+            <a class="button secondary" href="proyectos-dev.html">Back to Dev Projects</a>
+          </div>
+        </div>
+        <div data-lang="es">
+          <p class="eyebrow"><span></span>Únete al Laboratorio</p>
+          <h2>¿Tienes un dispositivo Allwinner o un proyecto de ROM?</h2>
+          <p>
+            Únete a nuestra comunidad beta para probar compilaciones de firmware personalizadas, compartir volcados de dispositivos y aportar al desarrollo de herramientas para Allwinner.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="comunidad-beta.html">Unirse a la Comunidad Beta</a>
+            <a class="button secondary" href="proyectos-dev.html">Volver a Proyectos Dev</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <a class="brand" href="index.html">
+        <img src="assets/tenkai-eye-mark.png" width="30" height="30" alt="">
+        <span>TENKAI <b>TENSHI</b></span>
+      </a>
+      <p>Tecnología local, privada y construida para operaciones reales.</p>
+    </div>
+    <nav aria-label="Ecosistemas">
+      <a href="ecosistemas/tenkai-pos.html">POS</a>
+      <a href="ecosistemas/tenkai-distribution.html">Distribution</a>
+      <a href="ecosistemas/tenkai-makers.html">Makers</a>
+      <a href="proyectos-dev.html">Proyectos Dev</a>
+    </nav>
+    <nav aria-label="Información">
+      <a href="politica-privacidad.html">Privacidad</a>
+      <a href="comunidad-beta.html">Comunidad</a>
+      <a href="soporte-contacto.html">Soporte</a>
+    </nav>
+    <p>© 2026 Tenkai Tenshi</p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
