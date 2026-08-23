@@ -616,6 +616,40 @@ body.lang-es [data-lang="en"] {
   letter-spacing: 0.05em;
   white-space: nowrap;
 }
+.button.paypal {
+  color: #fff;
+  background: linear-gradient(135deg, #0070ba, #003087);
+  border-color: rgba(0, 112, 186, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 112, 186, 0.25);
+}
+.button.paypal:hover {
+  background: linear-gradient(135deg, #0079c1, #00457c);
+  border-color: #0070ba;
+  box-shadow: 0 6px 22px rgba(0, 112, 186, 0.4);
+  transform: translateY(-2px);
+}
+.donation-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.6rem 2rem;
+  background: linear-gradient(135deg, rgba(0, 112, 186, 0.09), rgba(0, 48, 135, 0.04));
+  border: 1px solid rgba(0, 112, 186, 0.35);
+  border-radius: 18px;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+.donation-box-content h3, .donation-box-content h4 {
+  margin: 0 0 0.35rem;
+  color: #38bdf8;
+  font-size: 1.15rem;
+}
+.donation-box-content p {
+  margin: 0;
+  color: #d1d5db;
+  font-size: 0.88rem;
+}
 .chip-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
