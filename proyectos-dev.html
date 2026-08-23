@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Herramientas para Desarrolladores & Proyectos Dev · Tenkai Tenshi</title>
-  <meta name="description" content="Laboratorio de herramientas avanzadas, utilidades de bajo nivel, desempaquetado de firmware y proyectos de desarrollo de Tenkai Tenshi.">
+  <title>Proyectos de Desarrollo & Herramientas Técnicas · Tenkai Tenshi</title>
+  <meta name="description" content="Catálogo de herramientas de ingeniería, desarrollo de software, utilidades de bajo nivel y proyectos técnicos de Tenkai Tenshi.">
   <meta name="theme-color" content="#080a12">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Herramientas para Desarrolladores & Proyectos Dev · Tenkai Tenshi">
-  <meta property="og:description" content="Laboratorio de herramientas avanzadas, utilidades de bajo nivel, desempaquetado de firmware y proyectos de desarrollo de Tenkai Tenshi.">
+  <meta property="og:title" content="Proyectos de Desarrollo & Herramientas Técnicas · Tenkai Tenshi">
+  <meta property="og:description" content="Catálogo de herramientas de ingeniería, desarrollo de software, utilidades de bajo nivel y proyectos técnicos de Tenkai Tenshi.">
   <meta property="og:image" content="assets/og-tenkai-tenshi.png">
   <link rel="icon" href="assets/tenkai-eye-mark.png">
   <link rel="apple-touch-icon" href="assets/tenkai-eye-mark.png">
@@ -43,35 +43,34 @@
     <!-- Hero Section -->
     <section class="page-hero section-shell">
       <div class="page-hero-copy">
-        <p class="eyebrow"><span></span>Laboratorio de Desarrollo</p>
-        <h1>Herramientas para <em>desarrolladores.</em></h1>
+        <p class="eyebrow"><span></span>Proyectos de Programación y Desarrollo</p>
+        <h1>Proyectos y herramientas <em>para desarrolladores.</em></h1>
         <p class="lede">
-          Utilidades de ingeniería de bajo nivel, manipulación de firmware, desempaquetado de ROMs, flasheo de procesadores SoC y automatización técnica diseñadas para usuarios avanzados y creadores.
+          Espacio dedicado a software especializado, herramientas de ingeniería, desarrollo de bajo nivel, manipulación de firmware y utilidades técnicas creadas por Tenkai Tenshi para la comunidad maker y técnica.
         </p>
         <div class="actions">
-          <a class="button primary" href="dev/tenkai-rom-studio-universal-allwinner.html">Explorar Tenkai ROM Studio</a>
-          <a class="button secondary" href="#proyectos">Ver catálogo técnico</a>
+          <a class="button primary" href="#catalogo">Catálogo de herramientas técnicas</a>
         </div>
       </div>
       <aside class="page-hero-visual">
         <img src="assets/icons/tenkai-eye-transparent.webp" alt="Ojo de Tenkai Tenshi">
-        <span class="status live">Dev Tools & Firmware Hub</span>
+        <span class="status live">Laboratorio de Software</span>
       </aside>
     </section>
 
-    <!-- Projects Grid Section -->
-    <section class="section" id="proyectos">
+    <!-- Projects Catalog Section -->
+    <section class="section" id="catalogo">
       <div class="section-shell">
         <div class="section-heading">
-          <p class="eyebrow"><span></span>Catálogo de Herramientas Técnicas</p>
-          <h2>Proyectos de ingeniería y firmware</h2>
+          <p class="eyebrow"><span></span>Catálogo de herramientas técnicas</p>
+          <h2>Herramientas disponibles</h2>
           <p>
-            Herramientas creadas para resolver problemas específicos en hardware, desarrollo de controladores, empaquetado de sistemas operativos embebidos y manipulación de particiones.
+            Soluciones nativas diseñadas con enfoque en ejecución local, precisión de bajo nivel, seguridad de hardware y control total.
           </p>
         </div>
 
         <div class="app-grid">
-          <!-- Featured Project: Tenkai ROM Studio Universal Allwinner -->
+          <!-- Main Tool: Tenkai ROM Studio -->
           <article class="app-card featured" style="border-color: rgba(78, 216, 246, 0.4); box-shadow: 0 10px 40px rgba(78, 216, 246, 0.08);">
             <div class="app-top">
               <div style="display: flex; align-items: center; gap: 0.85rem;">
@@ -79,73 +78,30 @@
                   <span style="font-size: 1.6rem;">⚡</span>
                 </div>
                 <div>
-                  <span class="status live">v1.0.0 Preview</span>
+                  <span class="status live">v0.2.8 (2.0.0.2.8)</span>
                 </div>
               </div>
-              <span class="dev-badge">Allwinner SoC</span>
+              <span class="dev-badge">Windows Portable</span>
             </div>
-            <p class="app-kicker">Windows x64 & Linux CLI · Firmware Suite</p>
-            <h3>Tenkai ROM Studio Universal Allwinner</h3>
+            <p class="app-kicker">Universal Allwinner · Windows 10 / 11 (64-bit)</p>
+            <h3>Tenkai ROM Studio</h3>
+            <p style="color: var(--cyan); font-size: 0.9rem; font-weight: 700; margin-top: -0.25rem; margin-bottom: 0.75rem;">
+              Universal Allwinner
+            </p>
             <p>
-              Suite universal para desempaquetar, modificar, reconstruir y flashear ROMs en procesadores Allwinner (H713, H616, H618, H313, A523). Administra imágenes IMAGEWTY, particiones dinámicas `super` (LP/AOSP), `boot-resource`, inyección RRO y flasheo seguro por USB FEL.
+              Suite integral para Windows para desempaquetar imágenes de firmware IMAGEWTY, gestionar espacios de trabajo, integrar root con Magisk, personalizar logotipos de inicio y flashear dispositivos basados en procesadores Allwinner vía USB FEL de forma segura.
             </p>
             <ul class="mini-list" style="margin-top: 0.8rem;">
-              <li>IMAGEWTY Unpack/Repack</li>
-              <li>Dynamic Super (system/vendor/product)</li>
-              <li>Boot-Resource Editor</li>
-              <li>USB FEL & LiveSuit Protocol</li>
-              <li>Magisk & RRO Overlay</li>
+              <li>Flujo en 5 pasos: Extracción, Root, Logos, Reempaque y Flasheo</li>
+              <li>Pestaña rápida para cambio express de logotipos de inicio</li>
+              <li>Detección USB FEL/FES y validación estricta de compatibilidad SoC</li>
+              <li>Inspección profunda IMAGEWTY y comparador diferencial de ROMs</li>
+              <li>100% portable y autónoma (sin dependencias en AppData)</li>
             </ul>
-            <div class="card-actions">
-              <a href="dev/tenkai-rom-studio-universal-allwinner.html" style="color: var(--cyan); font-weight: 800;">
-                Abrir herramienta y documentación completa <span aria-hidden="true">→</span>
+            <div class="card-actions" style="margin-top: 1.25rem;">
+              <a href="dev/tenkai-rom-studio-universal-allwinner.html" class="button primary" style="width: 100%; text-align: center;">
+                Ver herramienta y documentación completa <span aria-hidden="true">→</span>
               </a>
-            </div>
-          </article>
-
-          <!-- Upcoming Dev Tool: Dynamic Super Partition Engine -->
-          <article class="app-card">
-            <div class="app-top">
-              <div style="width: 58px; height: 58px; border-radius: 16px; background: rgba(155, 124, 255, 0.12); border: 1px solid rgba(155, 124, 255, 0.3); display: grid; place-items: center;">
-                <span style="font-size: 1.6rem;">📦</span>
-              </div>
-              <span class="status review">En desarrollo</span>
-            </div>
-            <p class="app-kicker">Android 10/11/12+ · LP Sparse</p>
-            <h3>Dynamic Super Partition Engine</h3>
-            <p>
-              Módulo de extracción, redimensionamiento dinámico y empaquetado sin pérdidas de particiones `super.img` para arquitecturas ARM64 y dispositivos embebidos con metadatos sparse.
-            </p>
-            <ul class="mini-list" style="margin-top: auto;">
-              <li>Lpunpack & Lpmake GUI</li>
-              <li>Sparsity Alignment</li>
-              <li>AOSP/Ext4/F2FS</li>
-            </ul>
-            <div class="card-actions">
-              <span style="color: var(--muted); font-size: 0.78rem;">Módulo integrado en ROM Studio</span>
-            </div>
-          </article>
-
-          <!-- Upcoming Dev Tool: FEL Recovery & LiveSuit Automation -->
-          <article class="app-card">
-            <div class="app-top">
-              <div style="width: 58px; height: 58px; border-radius: 16px; background: rgba(74, 210, 128, 0.12); border: 1px solid rgba(74, 210, 128, 0.3); display: grid; place-items: center;">
-                <span style="font-size: 1.6rem;">🔌</span>
-              </div>
-              <span class="status review">En desarrollo</span>
-            </div>
-            <p class="app-kicker">USB FEL Protocol · Unbrick Utility</p>
-            <h3>FEL Recovery & Direct Flasher</h3>
-            <p>
-              Interfaz ligera para comunicación directa con el BootROM de chipsets Allwinner vía comandos USB FEL para recuperación de hard-bricks, lectura de sys_config y volcado de memoria NAND/eMMC.
-            </p>
-            <ul class="mini-list" style="margin-top: auto;">
-              <li>FEL Payload Injection</li>
-              <li>eMMC Direct Write</li>
-              <li>Unbrick Safe Mode</li>
-            </ul>
-            <div class="card-actions">
-              <span style="color: var(--muted); font-size: 0.78rem;">Módulo integrado en ROM Studio</span>
             </div>
           </article>
         </div>
@@ -184,17 +140,17 @@
       </div>
     </section>
 
-    <!-- Call to action / Community -->
+    <!-- Call to action / General Community -->
     <section class="contact-section">
       <div class="contact-inner section-shell">
-        <p class="eyebrow"><span></span>Comunidad de Desarrolladores</p>
-        <h2>¿Trabajas con firmware o procesadores Allwinner?</h2>
+        <p class="eyebrow"><span></span>Comunidad y Colaboración</p>
+        <h2>¿Tienes proyectos o ideas de desarrollo?</h2>
         <p>
-          Comparte tus pruebas de laboratorio, reportes de SoCs soportados y sugerencias para seguir mejorando las herramientas técnicas de Tenkai Tenshi.
+          Comparte pruebas de laboratorio, reportes técnicos y sugerencias para seguir enriqueciendo las herramientas especializadas de Tenkai Tenshi.
         </p>
         <div class="actions">
-          <a class="button primary" href="dev/tenkai-rom-studio-universal-allwinner.html">Ir a Tenkai ROM Studio</a>
-          <a class="button secondary" href="comunidad-beta.html">Unirse a la Comunidad Beta</a>
+          <a class="button primary" href="comunidad-beta.html">Comunidad Beta</a>
+          <a class="button secondary" href="soporte-contacto.html">Contacto Directo</a>
         </div>
       </div>
     </section>
