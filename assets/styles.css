@@ -588,6 +588,33 @@ body.lang-es [data-lang="en"] {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+.app-top-dev {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.app-top-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.version-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  color: var(--lime);
+  background: rgba(74, 210, 128, 0.08);
+  border: 1px solid rgba(74, 210, 128, 0.25);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 .chip-grid {
   display: grid;
