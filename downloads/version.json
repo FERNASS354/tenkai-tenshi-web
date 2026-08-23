@@ -1,0 +1,10 @@
+﻿{
+    "version_code":  300,
+    "changelog_es":  "Versión 3.0: Motor gráfico de alta fluidez (DoubleBuffering + WS_EX_COMPOSITED), cambio instantáneo de pestañas sin retrasos, cambio de idioma ultra-rápido anti-bloqueo, icono nativo en alta resolución y nuevo instalador Inno Setup.",
+    "download_url":  "https://raw.githubusercontent.com/FERNASS354/tenkai-tenshi-web/main/downloads/TenkaiRomStudio-v0.3.0-Setup.exe",
+    "portable_url":  "https://raw.githubusercontent.com/FERNASS354/tenkai-tenshi-web/main/downloads/TenkaiRomStudio_v0.3.0_Portable.zip",
+    "app":  "Tenkai ROM Studio",
+    "release_date":  "2026-08-23",
+    "changelog_en":  "Version 3.0: High-FPS fluid UI engine (DoubleBuffering + WS_EX_COMPOSITED), instantaneous zero-lag tab switching, ultra-fast non-blocking language switch, high-res native icon, and new Inno Setup installer.",
+    "latest_version":  "0.3.0"
+}
