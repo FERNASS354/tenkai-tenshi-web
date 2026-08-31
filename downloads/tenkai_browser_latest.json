@@ -1,9 +1,9 @@
 {
     "app": "Tenkai Browser",
-    "latest_version": "1.0.4",
-    "version_code": 104,
-    "release_date": "2026-08-30",
-    "download_url": "https://github.com/FERNASS354/tenkai-tenshi-web/releases/download/v1.0.4/TenkaiBrowser-Setup-1.0.4-x64.exe",
-    "changelog_es": "Versión 1.0.4: Navegador ultraligero potenciado por Edge Chromium, Tenkai Shield IA con escaneo y aprendizaje de scripts maliciosos con Gemini, WhatsApp Web dual con personalización de fondo de pantalla en chats, Mini Reproductor YouTube Music con Video Ad Killer, telemetría y HUD en tiempo real con consumo optimizado de 30 a 250 MB de RAM.",
-    "changelog_en": "Version 1.0.4: Ultra-lightweight browser powered by Edge Chromium, Tenkai Shield AI with Gemini-powered malicious script scanning, customizable dual WhatsApp Web, Mini YouTube Music player with Video Ad Killer, real-time telemetry and HUD with optimized 30-250 MB RAM usage."
+    "latest_version": "1.0.5",
+    "version_code": 105,
+    "release_date": "2026-08-31",
+    "download_url": "https://github.com/FERNASS354/tenkai-tenshi-web/releases/download/v1.0.5/TenkaiBrowser-Setup-1.0.5-x64.exe",
+    "changelog_es": "Versión 1.0.5: Selección personalizada de carpeta de descargas para archivos, PDFs y videos con selector de carpetas y botón para abrir en el Explorador. Incluye Tenkai Shield IA con Gemini, WhatsApp Web dual personalizable y ultra bajo consumo de RAM.",
+    "changelog_en": "Version 1.0.5: Customizable download directory for files, PDFs and videos with folder picker and Open in Explorer button. Includes Gemini-powered Tenkai Shield AI, customizable dual WhatsApp Web and ultra-low RAM usage."
 }
