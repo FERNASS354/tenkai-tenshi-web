@@ -4,6 +4,6 @@
     "version_code": 106,
     "release_date": "2026-09-01",
     "download_url": "https://github.com/FERNASS354/tenkai-tenshi-web/releases/download/v1.0.6/TenkaiBrowser-Setup-1.0.6-x64.exe",
-    "changelog_es": "Versión 1.0.6: Publicación 100% autocontenida sin requerir instalación de .NET Core en Windows 10/11. Identificación visual de grupos de pestañas con color superior, desacople fluido de pestañas individuales y resiliencia universal para reproductores de video HTML5.",
-    "changelog_en": "Version 1.0.6: 100% self-contained release with zero dependencies on Windows 10/11. Tab group visual color identification, smooth single tab ungrouping, and universal HTML5 video playback resiliency."
+    "changelog_es": "Versión 1.0.6: Publicación 100% autocontenida sin requerir instalación de .NET Core en Windows 10/11. Identificación visual de grupos de pestañas con color superior, desacople fluido de pestañas individuales y reproductores en HTML5 evitando congelamiento al bloquear publicidad.",
+    "changelog_en": "Version 1.0.6: 100% self-contained release with zero dependencies on Windows 10/11. Tab group visual color identification, smooth single tab ungrouping, and HTML5 video playback anti-freezing while blocking ads."
 }
