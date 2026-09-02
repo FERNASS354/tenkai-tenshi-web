@@ -1,9 +1,9 @@
 {
     "app": "Tenkai Browser",
-    "latest_version": "1.0.5",
-    "version_code": 105,
-    "release_date": "2026-08-31",
-    "download_url": "https://github.com/FERNASS354/tenkai-tenshi-web/releases/download/v1.0.5/TenkaiBrowser-Setup-1.0.5-x64.exe",
-    "changelog_es": "Versión 1.0.5: Selección personalizada de carpeta de descargas para archivos, PDFs y videos con selector de carpetas y botón para abrir en el Explorador. Incluye Tenkai Shield IA con Gemini, WhatsApp Web dual personalizable y ultra bajo consumo de RAM.",
-    "changelog_en": "Version 1.0.5: Customizable download directory for files, PDFs and videos with folder picker and Open in Explorer button. Includes Gemini-powered Tenkai Shield AI, customizable dual WhatsApp Web and ultra-low RAM usage."
+    "latest_version": "1.0.6",
+    "version_code": 106,
+    "release_date": "2026-09-01",
+    "download_url": "https://github.com/FERNASS354/tenkai-tenshi-web/releases/download/v1.0.6/TenkaiBrowser-Setup-1.0.6-x64.exe",
+    "changelog_es": "Versión 1.0.6: Publicación 100% autocontenida sin requerir instalación de .NET Core en Windows 10/11. Identificación visual de grupos de pestañas con color superior, desacople fluido de pestañas individuales y resiliencia universal para reproductores de video HTML5.",
+    "changelog_en": "Version 1.0.6: 100% self-contained release with zero dependencies on Windows 10/11. Tab group visual color identification, smooth single tab ungrouping, and universal HTML5 video playback resiliency."
 }
