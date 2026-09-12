@@ -1,10 +1,15 @@
 {
-    "version_code": 420,
-    "changelog_es": "Versión 4.2: Nuevo módulo ROM Debloater Studio con presets automáticos, Dumper en vivo de particiones y convertidor a IMAGEWTY, Boot Animation Studio para inspeccionar y empaquetar bootanimation.zip, soporte avanzado para imágenes dinámicas Super (Android 11+), reinicio a modo FEL directo desde ADB/Fastboot y motor gráfico de alta fluidez.",
-    "download_url": "https://github.com/FERNASS354/tenkai-tenshi-web/releases/download/v0.4.2/TenkaiStudioRoms_v0.4.2_Setup.exe",
-    "portable_url": "https://github.com/FERNASS354/tenkai-tenshi-web/releases/download/v0.4.2/TenkaiStudioRoms_v0.4.2_Setup.exe",
-    "app": "Tenkai ROM Studio",
+    "download_url": "https://github.com/FERNASS354/tenkai-tenshi-web/raw/main/downloads/TenkaiStudioRoms_v0.4.3_Setup.exe",
+    "changelog": [
+        "v0.4.3: Correccion critica en el motor de volcado (dump) y extraccion de particiones Allwinner evitando excepcion de strict-mode ().",
+        "v0.4.3: Launcher binario nativo C# hibrido: ejecucion desacoplada directa desde codigo fuente o fallback embebido.",
+        "v0.4.3: Modulo Creador e Inyector de Animaciones de Inicio (Boot Animation Studio).",
+        "v0.4.3: Soporte para empaquetado STORE (0% compresion) requerido por Android en bootanimation.zip.",
+        "v0.4.3: Inspector inteligente de especificaciones, resolucion, FPS y validacion de desc.txt.",
+        "v0.4.3: Integracion de Boot Animation en el Paso 3 del Pipeline de Creacion de ROMs.",
+        "v0.4.3: Limpiador inteligente de bloatware con base de datos de paquetes Allwinner."
+    ],
+    "version_code": 430,
     "release_date": "2026-09-12",
-    "changelog_en": "Version 4.2: New ROM Debloater Studio with automated presets, Live Device Firmware Dumper and IMAGEWTY converter, Boot Animation Studio for inspecting and packing bootanimation.zip, advanced dynamic Super image support (Android 11+), one-click reboot to FEL mode from ADB/Fastboot, and high-FPS fluid UI engine.",
-    "latest_version": "0.4.2"
+    "latest_version": "0.4.3"
 }
