@@ -1,5 +1,5 @@
 {
-    "download_url": "https://github.com/FERNASS354/tenkai-tenshi-web/raw/main/downloads/TenkaiStudioRoms_v0.4.3_Setup.exe",
+    "download_url": "https://github.com/FERNASS354/tenkai-tenshi-web/releases/download/v0.4.3/TenkaiStudioRoms_v0.4.3_Setup.exe",
     "changelog": [
         "v0.4.3: Correccion critica en el motor de volcado (dump) y extraccion de particiones Allwinner evitando excepcion de strict-mode ().",
         "v0.4.3: Launcher binario nativo C# hibrido: ejecucion desacoplada directa desde codigo fuente o fallback embebido.",
