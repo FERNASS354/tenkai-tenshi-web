@@ -1,0 +1,11 @@
+{
+    "app": "Tenkai POS",
+    "latest_version": "1.1.1+170",
+    "version_code": 170,
+    "release_date": "2026-09-29",
+    "download_url": "https://github.com/FERNASS354/tenkai-tenshi-web/releases/download/v1.1.1-170/TenkaiPOS-Setup-V1.1.1+170.exe",
+    "size_bytes": 39219340,
+    "size_mb": 39.2,
+    "changelog_es": "Versión 1.1.1+170: Módulo MED (Mermas y Devoluciones), folios independientes por terminal (V-, M1-, M2-, R-), blindaje anti-colisión offline y sincronización atómica con Tenkai Shield.",
+    "changelog_en": "Version 1.1.1+170: Spoilage & Returns (MED) module, per-terminal folios (V-, M1-, M2-, R-), offline anti-collision safeguards, and atomic Tenkai Shield verification."
+}
