@@ -28,7 +28,7 @@ const output = process.env.POS_CHECK_OUTPUT || path.resolve(root, '../audit-arti
     }
     const desktopText = await page.locator('main').innerText();
     assert(!/\+98|\+157|Cero fatiga|en 3 segundos|no se traba|sin corromperse/.test(desktopText));
-    for (const word of ['Costo ponderado', 'sin movimiento', '.tkc', 'respaldos', 'Piloto', '1.1.0+165']) assert(desktopText.toLowerCase().includes(word.toLowerCase()), `Missing copy: ${word}`);
+    for (const word of ['Costo ponderado', 'sin movimiento', '.tkc', 'respaldos', 'Piloto', '1.1.1+170']) assert(desktopText.toLowerCase().includes(word.toLowerCase()), `Missing copy: ${word}`);
     for (const width of [360, 390, 768, 900, 1024, 1440]) {
       await page.setViewportSize({ width, height: 1000 });
       await page.evaluate(() => scrollTo(0, 0));
