@@ -28,7 +28,7 @@ const output = process.env.POS_CHECK_OUTPUT || path.resolve(root, '../audit-arti
     }
     const desktopText = await page.locator('main').innerText();
     assert(!/\+98|\+157|Cero fatiga|en 3 segundos|no se traba|sin corromperse/.test(desktopText));
-    for (const word of ['Costo ponderado', 'sin movimiento', '.tkc', 'respaldos', 'Piloto', '1.1.1+170']) assert(desktopText.toLowerCase().includes(word.toLowerCase()), `Missing copy: ${word}`);
+    for (const word of ['costo ponderado', 'sin movimiento', 'respaldos', 'piloto', '1.1.1+170', 'cobro en dólares', 'Eleventa']) assert(desktopText.toLowerCase().includes(word.toLowerCase()), `Missing copy: ${word}`);
     for (const width of [360, 390, 768, 900, 1024, 1440]) {
       await page.setViewportSize({ width, height: 1000 });
       await page.evaluate(() => scrollTo(0, 0));
@@ -63,7 +63,7 @@ const output = process.env.POS_CHECK_OUTPUT || path.resolve(root, '../audit-arti
     const fallback = await noJS.newPage();
     await fallback.goto(pathToFileURL(path.join(root, 'tenkai-pos-landing.html')).href);
     await fallback.locator('[data-preview]').first().click();
-    assert(fallback.url().endsWith('pos-ventas-dark.png'), 'Image fallback without JS');
+    assert(fallback.url().endsWith('pos-catalogo.png'), 'Image fallback without JS');
     await noJS.close();
     assert.deepEqual(errors, []);
     fs.writeFileSync(path.join(output, 'checks.json'), JSON.stringify({ status: 'PASS', widths: [360,390,768,900,1024,1440], localReferences: refs.filter(r => !r.startsWith('http')).length, checks: ['local links and images','single h1 and unique IDs','restored copy and current version','no horizontal overflow','mobile navigation and Escape','dialog Enter/Escape/close/focus return','native FAQ','image fallback without JavaScript','no page errors'] }, null, 2));
