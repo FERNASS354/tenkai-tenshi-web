@@ -73,10 +73,13 @@ for(const dir of ['','apps','ecosistemas','dev','manuales','casos'])for(const e 
   const originalFile=file=>fs.existsSync(path.join(previous,file))?fs.readFileSync(path.join(previous,file)):execFileSync('git',['show',`eb848531deb34a405b32f30923748bf9496aa865:${file}`],{cwd:root,maxBuffer:4*1024*1024});
   for(const legal of ['politica-privacidad.html','terminos-licencia-eula.html']){
    const extract=s=>s.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1]?.replace(/\r\n/g,'\n');
-   assert.equal(extract(fs.readFileSync(path.join(root,legal),'utf8'))===extract(originalFile(legal).toString('utf8')),true,`${legal}: se modificó el contenido legal`);
+   const original=originalFile(legal).toString('utf8');
+   // Única aclaración autorizada de precio: Care distingue tarifa regular y promoción.
+   const expected=legal==='terminos-licencia-eula.html'?original.replace('<strong>Tenkai Care</strong> ($299 MXN/año)','<strong>Tenkai Care</strong> (precio regular $499 MXN/año; $299 MXN/año en promoción)'):original;
+   assert.equal(extract(fs.readFileSync(path.join(root,legal),'utf8'))===extract(expected),true,`${legal}: cambio fuera de la aclaración de precio de Care`);
   }
   const current=fs.readFileSync(path.join(root,'assets/icons/pos-windows.png'));assert(current.equals(originalFile('assets/icons/pos-windows.png')),'Icono POS modificado');
-  const summary={status:issues.length||errors.length?'FAIL':'PASS',routes:checked.length,viewports:[360,390,768,1024,1440],issues,errors,checks:['Recursos y anclas','Diseño adaptable','Menú móvil y Escape','Capturas y retorno de foco','Filtro de temas','Estimación con validación','Acceso sin JavaScript','Textos legales intactos','Icono POS intacto']};
+  const summary={status:issues.length||errors.length?'FAIL':'PASS',routes:checked.length,viewports:[360,390,768,1024,1440],issues,errors,checks:['Recursos y anclas','Diseño adaptable','Menú móvil y Escape','Capturas y retorno de foco','Filtro de temas','Estimación con validación','Acceso sin JavaScript','Privacidad intacta y licencia con precio Care aclarado','Icono POS intacto']};
   fs.writeFileSync(path.join(output,'checks.json'),JSON.stringify(summary,null,2));
   console.log(JSON.stringify(summary,null,2));assert.deepEqual(issues,[]);assert.deepEqual(errors,[]);
  }finally{await browser.close();}
