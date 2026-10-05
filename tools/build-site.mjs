@@ -104,6 +104,8 @@ for(const dir of ['', 'apps','ecosistemas','dev']) {
   if(generated.has(name))continue;
   let html=fs.readFileSync(path.join(root,name),'utf8');
   if(!html.includes('<main'))continue;
+  if(!['politica-privacidad.html','terminos-licencia-eula.html'].includes(name)) html=html.replace(/\bTenkai Caja\b/g,'Tenkai MultiPos').replace(/\bResguard\b/g,'Resguardo');
+  if(name==='ecosistemas.html') html=html.replace('El POS es la autoridad comercial; Caja, Inventory y Resguardo amplían terminales, piso y contingencia.','POS organiza ventas, caja e inventario. Inventory simplifica el surtido, MultiPos agrega cajas y Resguardo prepara la continuidad. Boss y Sync coordinan la información de las sucursales.').replace('Caja, Inventory y Resguardo conectan por LAN o trabajan con lotes controlados.','Inventory, MultiPos y Resguardo se conectan por la red de la tienda. Cada aplicación tiene una tarea y una preparación propias.');
   html=html.replace(/<header\b[\s\S]*?<\/header>/i,navigation(name)).replace(/<footer\b[\s\S]*?<\/footer>/i,footer(name));
   html=html.replace(/<script\b[^>]*src=["'][^"']*assets\/app\.js["'][^>]*><\/script>/gi,'');
   if(!html.includes('assets/premium.css')) html=html.replace('</head>',`<link rel="stylesheet" href="${href(name,'assets/premium.css')}"><script src="${href(name,'assets/premium.js')}" defer></script></head>`);
