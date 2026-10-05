@@ -6,7 +6,7 @@
   button?.addEventListener('click',()=>{const open=nav.classList.toggle('open');button.setAttribute('aria-expanded',String(open));});
   nav?.addEventListener('click',e=>{if(e.target.closest('a'))close();});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
-  window.addEventListener('resize',()=>{if(innerWidth>980)close();});
+  window.addEventListener('resize',()=>{if(innerWidth>1280)close();});
   const dialog=document.querySelector('.lightbox');
   let opener;
   document.querySelectorAll('[data-preview]').forEach(link=>link.addEventListener('click',e=>{

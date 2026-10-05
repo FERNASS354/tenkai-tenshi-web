@@ -7,7 +7,7 @@ export const editions = [
 ];
 export const additions = [
  {id:'multicaja',name:'MultiCaja',regular:799,promotion:499,text:'Módulo con una caja adicional para ampliar el mostrador.',extra:{regular:299,promotion:199,unit:'MXN · por caja posterior'}},
- {id:'resguardo',name:'Resguardo',regular:799,promotion:499,text:'Módulo de contingencia. Requiere preparar y autorizar el dispositivo.'},
+ {id:'resguardo',name:'Resguard',regular:799,promotion:499,text:'Módulo de contingencia. Requiere preparar y autorizar el dispositivo.'},
  {id:'care',name:'Tenkai Care',regular:499,promotion:299,unit:'MXN · al año',text:'Soporte por WhatsApp y hasta dos cambios de PC asistidos por año.'},
  {id:'sync-boss',name:'Sync + Boss',regular:1499,unit:'MXN · al año',label:'Precio del piloto',text:'Care incluido durante el piloto. Consulta disponibilidad y condiciones.'},
 ];

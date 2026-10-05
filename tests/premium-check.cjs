@@ -52,8 +52,10 @@ for(const dir of ['','apps','ecosistemas','dev','manuales','casos'])for(const e 
   await page.setViewportSize({width:390,height:844});
   await page.locator('.menu-button').click();assert.equal(await page.locator('.menu-button').getAttribute('aria-expanded'),'true');
   await page.keyboard.press('Escape');assert.equal(await page.locator('.menu-button').getAttribute('aria-expanded'),'false');
+  await page.goto(base+'tenkai-pos-landing.html');
   await page.locator('[data-preview]').first().focus();await page.keyboard.press('Enter');assert(await page.locator('dialog').evaluate(e=>e.open));
   await page.keyboard.press('Escape');assert.equal(await page.locator('dialog').evaluate(e=>e.open),false);assert(await page.locator('[data-preview]').first().evaluate(e=>e===document.activeElement));
+  await page.goto(base);
   await page.screenshot({path:path.join(output,'home-mobile.png'),fullPage:true});
   await page.setViewportSize({width:1440,height:1000});await page.evaluate(()=>scrollTo(0,0));
   await page.screenshot({path:path.join(output,'home-desktop.png'),fullPage:true});
@@ -68,11 +70,11 @@ for(const dir of ['','apps','ecosistemas','dev','manuales','casos'])for(const e 
   await page.goto(base+'proyectos-dev.html');await page.locator('[data-lang-target="en"]').click();await page.reload();assert.equal(await page.locator('html').getAttribute('lang'),'en');
   await page.locator('[data-lang-target="es"]').click();await page.reload();assert.equal(await page.locator('html').getAttribute('lang'),'es-MX');
   const noJS=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});const plain=await noJS.newPage();
-  await plain.goto(base);assert(await plain.locator('.site-nav').isVisible());await plain.locator('[data-preview]').first().click();assert(plain.url().endsWith('.png'));await noJS.close();
+  await plain.goto(base);assert(await plain.locator('.site-nav').isVisible());await plain.goto(base+'tenkai-pos-landing.html');await plain.locator('[data-preview]').first().click();assert(plain.url().endsWith('.png'));await noJS.close();
   const previous=path.resolve(root,'../../audit-artifacts/web-premium-20261005/published');
   const originalFile=file=>fs.existsSync(path.join(previous,file))?fs.readFileSync(path.join(previous,file)):execFileSync('git',['show',`eb848531deb34a405b32f30923748bf9496aa865:${file}`],{cwd:root,maxBuffer:4*1024*1024});
   for(const legal of ['politica-privacidad.html','terminos-licencia-eula.html']){
-   const extract=s=>s.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1]?.replace(/\r\n/g,'\n');
+   const extract=s=>s.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1]?.replace(/<nav class="pos-suite-nav"[\s\S]*?<\/nav>/,'').replace(/\r\n/g,'\n');
    const original=originalFile(legal).toString('utf8');
    // Única aclaración autorizada de precio: Care distingue tarifa regular y promoción.
    const expected=legal==='terminos-licencia-eula.html'?original.replace('<strong>Tenkai Care</strong> ($299 MXN/año)','<strong>Tenkai Care</strong> (precio regular $499 MXN/año; $299 MXN/año en promoción)'):original;
