@@ -27,7 +27,9 @@ const before=file=>execFileSync('git',['show',`a319fc94ed4ec90d9d6e3dab48f8e51c2
   const original=execFileSync('git',['show','eb848531deb34a405b32f30923748bf9496aa865:index.html'],{cwd:root}).toString('utf8');
   assert.equal(normalizedMain(fs.readFileSync(path.join(root,'index.html'),'utf8')),normalizedMain(original),'Original homepage content retained');
   await page.goto(base+'tenkai-pos-landing.html');
-  assert.deepEqual(await page.locator('.suite-links>a').allTextContents(),['Resumen','Funciones','Aplicaciones','Conexiones','Manuales','Descargas','Precios']);
+  assert.deepEqual(await page.locator('.pos-suite-nav a').allTextContents(),['Tenkai POS','Conexiones','Manuales']);
+  assert.equal(await page.locator('.pos-suite-nav a[href*="descargas"]').count(),0);
+  assert(await page.getByRole('link',{name:'Descargar para Windows',exact:true}).isVisible());
   assert.equal(await page.locator('#manuales .manual-card').count(),6);
   assert.equal(await page.locator('#ecosistema .suite-app-card').count(),5);
   assert.equal(await page.locator('.feature-topic').count(),10);

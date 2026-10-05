@@ -73,15 +73,20 @@ for(const dir of ['','apps','ecosistemas','dev','manuales','casos'])for(const e 
   await plain.goto(base);assert(await plain.locator('.site-nav').isVisible());await plain.goto(base+'tenkai-pos-landing.html');await plain.locator('[data-preview]').first().click();assert(plain.url().endsWith('.png'));await noJS.close();
   const previous=path.resolve(root,'../../audit-artifacts/web-premium-20261005/published');
   const originalFile=file=>fs.existsSync(path.join(previous,file))?fs.readFileSync(path.join(previous,file)):execFileSync('git',['show',`eb848531deb34a405b32f30923748bf9496aa865:${file}`],{cwd:root,maxBuffer:4*1024*1024});
-  for(const legal of ['politica-privacidad.html','terminos-licencia-eula.html']){
-   const extract=s=>s.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1]?.replace(/<nav class="pos-suite-nav"[\s\S]*?<\/nav>/,'').replace(/\r\n/g,'\n');
-   const original=originalFile(legal).toString('utf8');
-   // Única aclaración autorizada de precio: Care distingue tarifa regular y promoción.
-   const expected=legal==='terminos-licencia-eula.html'?original.replace('<strong>Tenkai Care</strong> ($299 MXN/año)','<strong>Tenkai Care</strong> (precio regular $499 MXN/año; $299 MXN/año en promoción)'):original;
-   assert.equal(extract(fs.readFileSync(path.join(root,legal),'utf8'))===extract(expected),true,`${legal}: cambio fuera de la aclaración de precio de Care`);
-  }
+  // La reescritura de privacidad y la definición de Care están autorizadas.
+  // Conserva todas las demás cláusulas del contrato de licencia.
+  const legal='terminos-licencia-eula.html';
+  const extract=s=>s.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1]?.replace(/<nav class="pos-suite-nav"[\s\S]*?<\/nav>/,'').replace(/(<article id="actualizaciones">)[\s\S]*?(<\/article>)/,'$1CARE-AUTHORIZED$2').replace(/\r\n/g,'\n');
+  assert.equal(extract(fs.readFileSync(path.join(root,legal),'utf8')),extract(originalFile(legal).toString('utf8')),'EULA clauses outside Care retained');
+  await page.goto(base+'politica-privacidad.html');
+  assert.equal(await page.locator('#play-store').count(),1);
+  assert.equal(await page.locator('#programas-directos').count(),1);
+  assert.match(await page.locator('#apoya-creador').innerText(),/Google Play/);
+  assert.match(await page.locator('#nube').innerText(),/abonos/);
+  assert.match(await page.locator('#solicitar-eliminacion').innerText(),/corrección/);
+  assert.equal(await page.locator('main a[href^="mailto:"]').count()>0,true);
   const current=fs.readFileSync(path.join(root,'assets/icons/pos-windows.png'));assert(current.equals(originalFile('assets/icons/pos-windows.png')),'Icono POS modificado');
-  const summary={status:issues.length||errors.length?'FAIL':'PASS',routes:checked.length,viewports:[360,390,768,1024,1440],issues,errors,checks:['Recursos y anclas','Diseño adaptable','Menú móvil y Escape','Capturas y retorno de foco','Filtro de temas','Estimación con validación','Acceso sin JavaScript','Privacidad intacta y licencia con precio Care aclarado','Icono POS intacto']};
+  const summary={status:issues.length||errors.length?'FAIL':'PASS',routes:checked.length,viewports:[360,390,768,1024,1440],issues,errors,checks:['Recursos y anclas','Diseño adaptable','Menú móvil y Escape','Capturas y retorno de foco','Filtro de temas','Estimación con validación','Acceso sin JavaScript','Privacidad separada y cláusulas EULA ajenas a Care intactas','Icono POS intacto']};
   fs.writeFileSync(path.join(output,'checks.json'),JSON.stringify(summary,null,2));
   console.log(JSON.stringify(summary,null,2));assert.deepEqual(issues,[]);assert.deepEqual(errors,[]);
  }finally{await browser.close();}
