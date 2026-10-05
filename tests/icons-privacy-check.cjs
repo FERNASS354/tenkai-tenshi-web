@@ -32,13 +32,24 @@ const pages=['apps/distribution.html','apps/distribution-host.html','apps/distri
   assert.match(await page.locator('#actualizaciones').innerText(),/actualizaciones por un año más/);
   assert.match(await page.locator('#actualizaciones').innerText(),/dos cambios de PC/);
   await page.goto(base+'politica-privacidad.html');
-  const previousIds=[...previous('politica-privacidad.html').toString('utf8').matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]).filter(id=>!['site-nav','preview-caption','preview-image','contenido'].includes(id));
+  const privacyBefore=execFileSync('git',['show','818f58edd91139237fb1390c3ba59aa228527c39:politica-privacidad.html'],{cwd:root,maxBuffer:8*1024*1024}).toString('utf8');
+  const previousIds=[...privacyBefore.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]).filter(id=>!['site-nav','preview-caption','preview-image','contenido'].includes(id));
+  const directBlock=html=>html.split('<section class="privacy-policy" id="programas-directos"')[1].split('<section class="privacy-request"')[0].replace(/\r\n/g,'\n');
+  assert.equal(directBlock(fs.readFileSync(path.join(root,'politica-privacidad.html'),'utf8')),directBlock(privacyBefore),'POS/Cloud notice retained');
   for(const id of previousIds)assert.equal(await page.locator(`[id="${id}"]`).count(),1,'privacy bookmark '+id);
   assert.match(await page.locator('#datos').innerText(),/teléfonos/);
-  assert.match(await page.locator('#play-title').innerText(),/Tenkai Music/);
+  assert.match(await page.locator('#play-title').innerText(),/Play Store/);
+  assert.match(await page.locator('#variaciones').innerText(),/actuales y futuras/);
+  assert.match(await page.locator('#variaciones').innerText(),/no son una lista cerrada/);
+  assert.match(await page.locator('#resumen').innerText(),/sin internet/);
+  assert.match(await page.locator('#sin-nube').innerText(),/no ofrecen almacenamiento ni sincronización/);
+  assert.match(await page.locator('#apoya-creador').innerText(),/al iniciar la aplicación/);
+  assert.equal(await page.locator('.privacy-permissions>div').count(),7);
+  assert(!/Crescencio/.test(await page.locator('.privacy-owner').innerText()));
   assert.match(await page.locator('#music').innerText(),/aunque desinstales/);
   assert.match(await page.locator('#music').innerText(),/alarmas y recordatorios/);
-  assert.match(await page.locator('#respaldos').innerText(),/Android/);
+  assert.match(await page.locator('#sin-nube').innerText(),/Android/);
+  assert.match(await page.locator('#respaldos').innerText(),/permanecer después de desinstalar/);
   assert.match(await page.locator('#licencias').innerText(),/comprador del software/);
   assert.match(await page.locator('#nube').innerText(),/cancelaciones de apartados/);
   assert.match(await page.locator('#derechos').innerText(),/no borra automáticamente/);
@@ -57,7 +68,7 @@ const pages=['apps/distribution.html','apps/distribution-host.html','apps/distri
   const noJS=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});const plain=await noJS.newPage();
   await plain.goto(base+'politica-privacidad.html');await plain.locator('.privacy-scope[href="#programas-directos"]').click();
   assert(new URL(plain.url()).hash==='#programas-directos');assert(await plain.locator('#direct-title').isVisible());await noJS.close();
-  const result={status:'PASS',new_icons:12,approved_icons_unchanged:5,pos_original_unchanged:true,privacy_bookmarks:previousIds.length,care:'Annual updates and 2 assisted PC migrations',widths:[360,390,768,1024,1440],base};
+  const result={status:'PASS',new_icons:12,approved_icons_unchanged:5,pos_original_unchanged:true,privacy_bookmarks:previousIds.length,play_scope:'Current and future offline-first apps',conditional_permission_categories:7,pos_cloud_notice_unchanged:true,care:'Annual updates and 2 assisted PC migrations',widths:[360,390,768,1024,1440],base};
   fs.writeFileSync(path.join(out,'checks.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result));
  }finally{await browser.close()}
 })().catch(e=>{console.error(e);process.exitCode=1});
