@@ -24,10 +24,23 @@ Vista local: `http://127.0.0.1:4173`. Las páginas existentes conservan su conte
 
 ## Verificación
 
+### Tenkai Checker
+
+`tenkai-checker.html` presenta el exterior 3D de la versión 2.0 y distingue la fotografía y el video reales del prototipo 1.0. El contenido se genera desde `tools/checker-page.mjs`; `assets/checker-viewer.js` usa WebGL nativo y carga solo las doce piezas exteriores de `assets/checker/checker-v2-exterior.json`. No incluye electrónica, bandeja interior, despiece ni controles de transparencia. Se enlaza desde la sección `#checador` de Tenkai POS y tiene su propia pestaña global y navegación independiente. Las tres entradas del submenú de POS se conservan; la ruta provisional `tenkai-shaker.html` redirige a Checker.
+
+Los medios viven en `assets/checker/`. El MP4 original conserva sus bytes; el poster del video procede de un fotograma real. El poster 2.0 y la imagen para compartir proceden del render 3D. Las fotografías y videos de 1.0 no se presentan como equipo físico 2.0. Las especificaciones presentan el hardware y las opciones comerciales indicadas por el propietario; la fabricación es bajo pedido. El propietario confirmó pruebas del prototipo 1.0 con Eleventa MultiCaja y SICAR 4.0: un programa puente consulta la base de datos y envía cambios de productos, precios y códigos en pocos segundos. Eleventa MonoCaja usa el último respaldo disponible, con actualización manual: cerrar MonoCaja, actualizar el catálogo en el puente, enviarlo al checador y reabrir MonoCaja. El checador consulta sin internet el último catálogo descargado; requiere el puente activo y conexión con él para recibir cambios. Al desconectarse conserva la información, que puede quedar desactualizada. No se afirma certificación de otras versiones o ediciones.
+
+Tenkai Checker conecta de forma nativa con Tenkai POS mediante conexión rápida, sin puente. El programa puente se proporciona para las integraciones con Eleventa y SICAR; la consulta offline conserva el último catálogo en cualquiera de las modalidades.
+
+Las versiones comerciales indicadas por el propietario son $5,800 MXN sin batería y $6,500 MXN con batería de 10,000 mAh, apagador y autonomía estimada de 4–5 horas. Ambas incluyen base y un año de garantía limitada en componentes, excluyendo daños por manipulación o externos. Entrega aproximada de 25 días después del pago, bajo pedido. El respaldo mantiene encendido el checador; las actualizaciones dependen de la red y del POS/puente activos. Los botones de pedido abren una consulta y no procesan pagos.
+
+Prueba enfocada: `node tests/checker-check.cjs`. Comprueba seis anchos de 320 a 1440 px, las cuatro vistas, zoom, giro por arrastre y teclado, visor fotográfico, reproducción real del video, alternativa sin JavaScript/WebGL y ausencia de piezas interiores. No valida de nuevo el hardware ni las integraciones de punto de venta. El servidor de desarrollo sirve MP4 con su tipo correcto.
+
 ```powershell
 node tests/premium-check.cjs
 node tests/navigation-check.cjs
 node tests/icons-privacy-check.cjs
+node tests/checker-check.cjs
 ```
 
 Requiere Chrome y Playwright. `TENKAI_PLAYWRIGHT_PATH` permite indicar el paquete Playwright; por defecto usa el runtime local de Codex. `TENKAI_SITE_URL` permite comprobar el sitio publicado. `TENKAI_QA_OUTPUT` permite elegir la carpeta de evidencias.
@@ -42,4 +55,4 @@ Los manuales se pueden imprimir o guardar en PDF desde el navegador. La PWA de C
 
 Repositorio público: `FERNASS354/tenkai-tenshi-web`, rama `main`. Publica mediante un commit normal y un push. Comprueba el dominio, manuales, recursos y descarga después del despliegue de GitHub Pages.
 
-Para revertir, revierte el commit de la actualización y publica esa reversión. La versión anterior a los doce iconos y la nueva política es `a6d4067ecbe44433c829f722b6b03e8df2db019f`; el sitio original antes de los rediseños está en `eb848531deb34a405b32f30923748bf9496aa865` y en el respaldo local de la auditoría. Esta actualización no modifica los paquetes de las aplicaciones ni las reglas del servidor. Se actualiza la política pública y la explicación de Care; las demás condiciones de licencia se conservan.
+Para revertir, revierte el commit de la actualización y publica esa reversión. La versión anterior a los doce iconos y la nueva política es `a6d4067ecbe44433c829f722b6b03e8df2db019f`; el sitio original antes de los rediseños está en `eb848531deb34a405b32f30923748bf9496aa865` y en el respaldo local de la auditoría. La base anterior a Tenkai Checker es `74cc85cc07660b421b00c6c7d338af3b035bb05b`. La integración del checador modifica únicamente la web; conserva el contenido previo de POS y los textos legales, y no modifica firmware, paquetes de aplicaciones ni las reglas del servidor.

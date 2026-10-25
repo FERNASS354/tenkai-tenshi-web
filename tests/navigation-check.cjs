@@ -6,7 +6,7 @@ const {chromium}=require(process.env.TENKAI_PLAYWRIGHT_PATH||path.join(process.e
 const root=path.resolve(__dirname,'..');
 const base=process.env.TENKAI_SITE_URL||'http://127.0.0.1:4173/';
 const out=process.env.TENKAI_QA_OUTPUT||path.resolve(root,'../../audit-artifacts/web-structure-20261005/qa-navigation');
-const links=['index.html','ecosistemas.html','aplicaciones.html','proyectos-dev.html','tenkai-pos-landing.html','tenkai-founders.html','comunidad-beta.html','politica-privacidad.html','soporte-contacto.html'];
+const links=['index.html','ecosistemas.html','aplicaciones.html','proyectos-dev.html','tenkai-pos-landing.html','tenkai-checker.html','tenkai-founders.html','comunidad-beta.html','politica-privacidad.html','soporte-contacto.html'];
 const before=file=>execFileSync('git',['show',`a319fc94ed4ec90d9d6e3dab48f8e51c2e4d164c:${file}`],{cwd:root,maxBuffer:4*1024*1024}).toString('utf8');
 (async()=>{
  fs.mkdirSync(out,{recursive:true});
